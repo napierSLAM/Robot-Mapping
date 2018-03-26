@@ -12,3 +12,10 @@ milli will be used for servo
 16:15
 Going to go back to servo and sonar
 First calibrate sonar
+
+23:30
+Sonar calibrated photos taken, cone of effect, screen shots
+code basic done
+
+ISR slot counting worked out see motor code
+will test tomorrow
