@@ -19,3 +19,14 @@ code basic done
 
 ISR slot counting worked out see motor code
 will test tomorrow
+
+
+27/3/18
+10:00
+Building structure of my test bot
+Rather than bodging, a little more permanent bodge!
+Fixing the breadboard, powershield, arduino, speed sensor to chassis
+Then make superstructure at front for servo/sonar
+With compass top and middle
+
+When done can test motor code frm last night
