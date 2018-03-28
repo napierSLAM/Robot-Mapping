@@ -25,7 +25,24 @@ So if it is relative to an arbitary start position, awareness needs to be mainta
 
 # Traversing 
 
-Traversing is recording heading and distance travelled.
+Traversing is recording heading and distance travelled:
+
+A heading is taken
+The bot moves
+The distance is recorded
+The bot turns
+A new heading is taken
+The bot moves
+The distance is recorded
+The bot turns
+A new heading is taken
+etc.
+
+Heading of 0 is taken:      x
+                            x
+                            x
+                            x
+
 
 
 
