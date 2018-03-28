@@ -27,17 +27,24 @@ So if it is relative to an arbitary start position, awareness needs to be mainta
 
 Traversing is recording heading and distance travelled:
 
-A heading is taken
-The bot moves
-The distance is recorded
-The bot turns
-A new heading is taken
-The bot moves
-The distance is recorded
-The bot turns
-A new heading is taken
-etc.
+A heading is taken  
+The bot moves  
+The distance is recorded  
+The bot turns  
+A new heading is taken   
+The bot moves  
+The distance is recorded  
+The bot turns  
+A new heading is taken  
+etc.  
 
+## Distance
 
+For this purpose, distance can be recorded using an optical sensor (see motor folder)
+A disc with slots cut in it is mounted on the inside (opposite to wheel) of a drive shaft
+The drive shaft is connected to a geared dc motor
+
+The optical sensor has a slot with a beam of infra red light
+The disk sits in the slot and as the disk spins the slots break the beam
 
 
