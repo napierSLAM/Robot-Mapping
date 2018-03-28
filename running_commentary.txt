@@ -43,4 +43,7 @@ This morning rebuilt bot.
 Then did testing on sonar readings
 Working out the cone of effect: i.e at what distance things are seen and to what detail
 Going to need a pair of sonars front and back to work properly. So 2 of 2 x sonar
+Messed with code
+
+Then wrote more for readme
 
