@@ -38,24 +38,6 @@ The bot turns
 A new heading is taken
 etc.
 
-Quick Example:
-Heading of 0 is taken:                            x  
-                                                  x  
-                                                  x  
-                                                  x  
-Distance recorded,                                x
-Bot turns 90 degree left:                         x x x x  
-Distance recorded,                                        x
-Bot turns 45 degree right:                                  x  
-                                                              x  
-                                                              x  
-Distance recorded,                                            x  
-Bot turns 45 degree right:                                    x  
-                                                              x  
-                                                              x  
-Distance recorded,                                            x
-Relative position of the bot known:                           x  
-
 
 
 
