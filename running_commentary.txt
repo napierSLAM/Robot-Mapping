@@ -29,4 +29,12 @@ Fixing the breadboard, powershield, arduino, speed sensor to chassis
 Then make superstructure at front for servo/sonar
 With compass top and middle
 
-When done can test motor code frm last night
+When done can test motor code from last night (motor code currently uploaded, need to learn how to use github to be honest!)
+
+Full day building test bot using my parts.
+Sonar placement took a lot of time and thinking,
+More on this in bit
+
+Finished roughly 19:00, tested motor code, all good (need to cailbrate)
+Then spent hours working out sonar placement. (seperate doc)
+
