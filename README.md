@@ -1,7 +1,7 @@
 # Robot-Mapping
 A simple autonomous mapping bot for Napier 17/18 Yr 3 Computer School Group Project
-# Code for DC Motors
 
+# Initial Bot
 The bot is moved by 2 DC motors controlled by an arduino
 
 An initial build was done to get a moving bot that was aware of its environment
@@ -14,5 +14,20 @@ A sonar reading was taken in these positions and the bot would then turn to face
 Or if no obstacle was in range, then a random side was chosen
 (Code still to be uploaded to Robot-Mapping/obstacle_avoid/) 
 
-This was a nice 'dumb' bot that acted as a POC for a noving bot
+This was a nice 'dumb' bot that acted as a POC for a moving bot
+
+But the purpose is a mapping bot which has different needs
+
+The bot needs awareness of where it is - either relative to starting position or using external info
+Easiest for basic is to make it relative
+
+So if it is relative to an arbitary start position, awareness needs to be maintained through 'traversing'
+
+# Traversing 
+
+Traversing is recording heading and distance travelled.
+
+
+
+
 
