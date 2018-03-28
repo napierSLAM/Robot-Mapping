@@ -46,4 +46,10 @@ Going to need a pair of sonars front and back to work properly. So 2 of 2 x sona
 Messed with code
 
 Then wrote more for readme
+Uploaded bits and pieces of code
+THERE IS NOW ENOUGH CODE IN BITS AND PIECES HERE FOR SOMEONE TO PICK THROUGH AND WRITE SOMETHING
 
+Investigated serial comms to pi
+Roughed out python script and uploaded some other examples 
+
+Looked tkinter for drawing map
