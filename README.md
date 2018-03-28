@@ -39,12 +39,14 @@ A new heading is taken
 etc.  
 
 ## Distance
+For this purpose, distance can be recorded using an optical sensor (see motor folder)  
+A disc with slots cut in it is mounted on the inside (opposite to wheel) of a drive shaft  
+The drive shaft is connected to a geared dc motor  
 
-For this purpose, distance can be recorded using an optical sensor (see motor folder)
-A disc with slots cut in it is mounted on the inside (opposite to wheel) of a drive shaft
-The drive shaft is connected to a geared dc motor
-
-The optical sensor has a slot with a beam of infra red light
+The optical sensor has a slot with a beam of infra red light  
 The disk sits in the slot and as the disk spins the slots break the beam
+A count is kept of each slot.
+(For the test bot each slot represents 10.4mm of travel, which is going to be treated as 10mm (1cm))
+Without adjustment and calibration this method is somewhat inaccurate, but close enough for the moment. (see motors folder for more discussion on this point)
 
 
