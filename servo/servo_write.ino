@@ -9,3 +9,5 @@ void setup()
 } 
 
 void loop() {} 
+
+// we can use myservo.write(0) and myservo.write(180) for readings
