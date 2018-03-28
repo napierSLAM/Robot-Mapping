@@ -14,7 +14,7 @@ while True:
         print("Keyboard Interrupt")
         break
     
-       # f = open('output.csv', 'w+')	
+       # f = open('output.csv', 'a')	
        # while True:
        # Read a line and convert it from b'xxx\r\n' to xxx
        # line = ser.readline().decode('utf-8')]
