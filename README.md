@@ -39,19 +39,19 @@ A new heading is taken
 etc.
 
 Quick Example:
-Heading of 0 is taken:                            x
-                                                  x
-                                                  x
-                                                  x
-Distance recorded and bot turns 90 degree left:   x x x x
-Distance recorded and bot turns 45 degree right:          x
-                                                            x
-                                                              x
-Distance recorded and bot turns 45 degree right:              x
-                                                              x
-                                                              x
-                                                              x
-Distance recorded and relative position of the bot known:     x
+Heading of 0 is taken:                            x  
+                                                  x  
+                                                  x  
+                                                  x  
+Distance recorded and bot turns 90 degree left:   x x x x  
+Distance recorded and bot turns 45 degree right:          x  
+                                                            x  
+                                                              x  
+Distance recorded and bot turns 45 degree right:              x  
+                                                              x  
+                                                              x  
+                                                              x  
+Distance recorded and relative position of the bot known:     x  
 
 
 
