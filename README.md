@@ -19,7 +19,8 @@ This was a nice 'dumb' bot that acted as a POC for a moving bot
 But the purpose is a mapping bot which has different needs
 
 The bot needs awareness of where it is - either relative to a starting position or by using external info like GPS co-ords.  
-The easiest for a basic demo is to make location awareness relative to an arbitary start position.
+The easiest for a basic demo is to make location awareness relative to an arbitary start position.  
+
 For relative positioning, awareness needs to be maintained through 'traversing'
 
 # Traversing 
@@ -55,10 +56,23 @@ The bot turns a certain number of +ve/-ve degrees relative to it's current posit
 Again adjustment and calibration is needed to make this accurate but for present purposes it suffices
 
 ## Mapping
-Once the bot has spatial awareness or 'localisation' it can then take readings of the space around it using a sensor to learn the environment.  
-The purpose of this bot is map the locale, so sonar (see Robot-Mapping/sonar/notes.txt) readings are taken.
-The sonar gives a reading in the form of distance to an obstacle
+The purpose of this bot is map the locale, so sensor readings are taken using sonar(, see Robot-Mapping/sonar/notes.txt).   
+The sonar gives a reading in the form of distance to an obstacle by sending a soundwave out, which will hit a solid object and bounce (echo) back.  
+The time for the echo to return is measured and then converted to a distance
+Once the bot has spatial awareness or 'localisation', these readings can then be plotted relative to the bot, creating a map of the environment.
 
+### Plotting Readings
+The most important issue in plotting the readings is the resolution, meaning the level of detail.
+A simple way to think of this, is to consider a square room 500cm by 500cm with a grid superimposed on top.
+- If the grid was made of squares 250cm by 250cm there would be 4 squares
+- If the grid was made of squares 100cm by 100cm there would be 25 squares
+- If the grid was made of squares 50cm by 50cm there would be 100 squares
+- If the grid was made of squares 20cm by 20cm there would be 625 squares
+
+The more squares, the higher the resoltion.  
+As the bot takes readings, it determines if a square is 'occupied' and records this information
+
+For this demo bot the chosen resolution is 20cm by 20cm. A full discussion of this choice can be found in the mapping folder, but one reason is that the bot has a footprint of approx 18cm x 18cm.
 
 
 
