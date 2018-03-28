@@ -61,8 +61,8 @@ The sonar gives a reading in the form of distance to an obstacle by sending a so
 The time for the echo to return is measured and then converted to a distance
 Once the bot has spatial awareness or 'localisation', these readings can then be plotted relative to the bot, creating a map of the environment.
 
-### Plotting Readings
-The most important issue in plotting the readings is the resolution, meaning the level of detail.
+### Taking Readings
+The most important issue in taking the readings is the resolution, meaning the level of detail.
 A simple way to think of this, is to consider a square room 500cm by 500cm with a grid superimposed on top.
 - If the grid was made of squares 250cm by 250cm there would be 4 squares
 - If the grid was made of squares 100cm by 100cm there would be 25 squares
@@ -74,6 +74,19 @@ As the bot takes readings, it determines if a square is 'occupied' and records t
 
 For this demo bot the chosen resolution is 20cm by 20cm. A full discussion of this choice can be found in the mapping folder, but one reason is that the bot has a footprint of approx 18cm x 18cm.
 
+### TO DO: TALK ABOUT MAPPING ALGORITHM AND SEQUENCE OF SENSOR READINGS
+i.e bot takes readings in four directions - puts readings on serial line with relative location
+
+# Plotting Map Readings
+A requirement for the bot is to display a created map in real time.
+Once a reading has been taken and placed on the serial line, a Raspberry Pi listening on the serial line will read and record this information.
+The Pi will run a Python script to display the information as it becomes available.  
+Size of room to be mapped and positioning of bot are relevant here, but for initial development it's useful to think there isn't a shitty operator who trys to trick the bot by placing it in edge situations (literally and figurativly!). 
+This actually holds for a lot of the development. Once a simple solution for ideal situations has been developed, it can be expanded to include difficult situations. (Like a room full of pillars close together : / )
+
+The basics of the map drawing are:
+-Draw a canvas 500cm by 500cm 
+-Assume bot starts in the centre (see above) 
 
 
 
