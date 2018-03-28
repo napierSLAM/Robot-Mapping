@@ -18,13 +18,11 @@ This was a nice 'dumb' bot that acted as a POC for a moving bot
 
 But the purpose is a mapping bot which has different needs
 
-The bot needs awareness of where it is - either relative to starting position or using external info
-Easiest for basic is to make it relative
-
-So if it is relative to an arbitary start position, awareness needs to be maintained through 'traversing'
+The bot needs awareness of where it is - either relative to a starting position or by using external info like GPS co-ords.  
+The easiest for a basic demo is to make location awareness relative to an arbitary start position.
+For relative positioning, awareness needs to be maintained through 'traversing'
 
 # Traversing 
-
 Traversing is recording heading and distance travelled:
 
 A heading is taken  
@@ -47,6 +45,22 @@ The optical sensor has a slot with a beam of infra red light.
 The disk sits in the slot and as the disk spins the slots break the beam. A count is kept of each slot.  
 (For the test bot each slot represents 10.4mm of travel, which is going to be treated as 10mm (1cm).)  
 Without adjustment and calibration this method is somewhat inaccurate, but close enough for the moment.  
-(see motors folder for more discussion on this point)
+(See motors folder for more discussion on this point.)  
+
+## Heading
+A simple magnometer, reading in 3 axis, can be used for heading.  
+The magnometer can take a compass reading (a reading relative to magnetic North,) and then turn to the cardinal points etc.
+A slightly simpler method (though prone to errors) is to use relative headings.
+The bot turns a certain number of +ve/-ve degrees relative to it's current position.
+Again adjustment and calibration is needed to make this accurate but for present purposes it suffices
+
+## Mapping
+Once the bot has spatial awareness or 'localisation' it can then take readings of the space around it using a sensor to learn the environment.  
+The purpose of this bot is map the locale, so sonar (see Robot-Mapping/sonar/notes.txt) readings are taken.
+The sonar gives a reading in the form of distance to an obstacle
+
+
+
+
 
 
