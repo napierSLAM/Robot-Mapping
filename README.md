@@ -55,13 +55,13 @@ A slightly simpler method (though prone to errors) is to use relative headings.
 The bot turns a certain number of +ve/-ve degrees relative to it's current position.
 Again adjustment and calibration is needed to make this accurate but for present purposes it suffices
 
-## Mapping
+# Mapping
 The purpose of this bot is map the locale, so sensor readings are taken using sonar(, see Robot-Mapping/sonar/notes.txt).   
 The sonar gives a reading in the form of distance to an obstacle by sending a soundwave out, which will hit a solid object and bounce (echo) back.  
 The time for the echo to return is measured and then converted to a distance
 Once the bot has spatial awareness or 'localisation', these readings can then be plotted relative to the bot, creating a map of the environment.
 
-### Taking Readings
+## Taking Readings
 The most important issue in taking the readings is the resolution, meaning the level of detail.
 A simple way to think of this, is to consider a square room 500cm by 500cm with a grid superimposed on top.
 - If the grid was made of squares 250cm by 250cm there would be 4 squares
@@ -84,9 +84,18 @@ The Pi will run a Python script to display the information as it becomes availab
 Size of room to be mapped and positioning of bot are relevant here, but for initial development it's useful to think there isn't a shitty operator who trys to trick the bot by placing it in edge situations (literally and figurativly!). 
 This actually holds for a lot of the development. Once a simple solution for ideal situations has been developed, it can be expanded to include difficult situations. (Like a room full of pillars close together : / )
 
-The basics of the map drawing are:
--Draw a canvas 500cm by 500cm 
--Assume bot starts in the centre (see above) 
+The basics of the map drawing are:  
+- Python script draws a canvas 500cm by 500cm 
+- Set units as 20cm by 20cm
+- Assume whole area is occupied with each square on the canvas black
+- Assume bot starts in the centre (see above re edge situations) 
+- Bot takes readings and sends to the serial line
+- Pi reads info and stores in an array
+- Python Script reads array
+- To a distance of 3 units unoccupied squares are changed to white
+- Bot moves through mapping sequence, putting readings on serial
+- Pi continues to build mapping array
+- At reasonable intervals the python script rebuilds the map using the updated array
 
 
 
