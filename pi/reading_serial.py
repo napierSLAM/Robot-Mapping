@@ -1,4 +1,5 @@
 import serial
+import csv
 
 import serial
 ser = serial.Serial('/dev/ttyACM0')
@@ -12,3 +13,11 @@ while True:
     except:
         print("Keyboard Interrupt")
         break
+    
+       # f = open('output.csv', 'w+')	
+       # while True:
+       # Read a line and convert it from b'xxx\r\n' to xxx
+       # line = ser.readline().decode('utf-8')]
+       # if line:  # If it isn't a blank line
+       # f.write(line)
+       # f.close()
