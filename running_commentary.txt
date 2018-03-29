@@ -62,3 +62,13 @@ We need something that will run as a webscript
 Looking into 'Processing' which seems suitable
 
 Processing is nice and easy with a nice serial library
+
+Yeah, Processing is the way to go
+Basic script roughed out
+It's also been useful to draw out how bot moves through a 'grid'
+
+Also today made up circuits in fritzing for Jay
+basic motor
+motor with speed sensor
+2 x Sonar (3pin)
+Magnometer
