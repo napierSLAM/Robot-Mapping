@@ -53,3 +53,10 @@ Investigated serial comms to pi
 Roughed out python script and uploaded some other examples 
 
 Looked tkinter for drawing map
+
+29/3/18
+
+Tkinter and python won't work for what we need
+We need something that will run as a webscript
+
+Looking into 'Processing' which seems suitable
