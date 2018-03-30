@@ -72,3 +72,6 @@ basic motor
 motor with speed sensor
 2 x Sonar (3pin)
 Magnometer
+
+30th
+All fritzing circuit diagrams done and uploaded
