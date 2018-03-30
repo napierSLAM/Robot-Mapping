@@ -1,0 +1,2 @@
+coords excel file is the coords for a 240 x 240 grid with a 20,20 interval
+Just to get the head stright when doing the bot location
