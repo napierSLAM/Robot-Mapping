@@ -19,7 +19,7 @@ NewPing sonar[SONAR_NUM] = {   // Sensor object array.
 };
 
 void setup() {
-  Serial.begin(9600); // Open serial monitor at 115200 baud to see ping results.
+  Serial.begin(9600); 
 }
 
 void loop() {
@@ -30,9 +30,9 @@ float distance() {
   int d = 0;
   float dist;
   for (uint8_t i = 0; i < SONAR_NUM; i++) { // Loop through each sensor
-    delay(50); // Wait 50ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
-    d = d + sonar[i].ping_cm();
-    dist = d/SONAR_NUM;
+    delay(50); // Wait 50ms between pings (about 20 pings/sec)
+    d = d + sonar[i].ping_cm(); // sum 3 distances
   }
+  dist = d/SONAR_NUM; //Get mean of distances
   Serial.println(dist);
 }
