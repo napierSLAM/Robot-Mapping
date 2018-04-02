@@ -1,6 +1,8 @@
-// ---------------------------------------------------------------------------
-// Example NewPing library sketch that pings 3 sensors 20 times a second.
-// ---------------------------------------------------------------------------
+/*
+  02/04/18
+  Paddy
+  Napier Robot SLAM
+*/
 
 #include <NewPing.h>
 
