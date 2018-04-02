@@ -11,21 +11,26 @@
 #define PIN_3 13 // trigger/echo pin for sonar 3
 
 NewPing sonar[SONAR_NUM] = {   // Sensor object array.
-  NewPing(4, 5, MAX_DISTANCE), // Each sensor's trigger pin, echo pin, and max distance to ping. 
-  NewPing(6, 7, MAX_DISTANCE), 
-  NewPing(8, 9, MAX_DISTANCE)
+  NewPing(PIN_1, PIN_1, MAX_DISTANCE), // Each sensor's trigger pin, echo pin, and max distance to ping. 
+  NewPing(PIN_2, PIN_2, MAX_DISTANCE), 
+  NewPing(PIN_3, PIN_3, MAX_DISTANCE)
 };
 
 void setup() {
-  Serial.begin(115200); // Open serial monitor at 115200 baud to see ping results.
+  Serial.begin(9600); // Open serial monitor at 115200 baud to see ping results.
+}
+
+void loop() {
+  distance();
 }
 
 float distance() { 
-  int d = 0
+  int d = 0;
+  float dist;
   for (uint8_t i = 0; i < SONAR_NUM; i++) { // Loop through each sensor
     delay(50); // Wait 50ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
     d = d + sonar[i].ping_cm();
-    float distance = d/SONAR_NUM;
+    dist = d/SONAR_NUM;
   }
-  Serial.println(distance);
+  Serial.println(dist);
 }
