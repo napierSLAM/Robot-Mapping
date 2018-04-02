@@ -1,5 +1,8 @@
 coords excel file is the coords for a 240 x 240 grid with a 20,20 interval
 Just to get the head stright when doing the bot location
 
-the coords.ino is an array of arrays for processing for doing a simple map sketch
-'mimicing' possible bot output
+the coords.pde is an array of arrays for processing for doing a simple map sketch
+'mimicing' possible bot output from a 512 by 512 map with a 64 interval in x and 32 in y
+
+Useful to use pixel sizes
+As well as the serendipity of 3 sonars giving a front of 32cm at 32cm distance
