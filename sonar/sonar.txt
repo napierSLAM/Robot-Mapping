@@ -1,1 +1,10 @@
 Sonar placement
+
+After experimenting with comes of effect 3 sonars are needed
+
+3 sonars located above the bot axle set for a 32 cm obstcale give full coverage in front of the bot
+and stops any blind spot
+
+Meaning the servo doesn't need to swing for obstacle avoidance
+
+Only need servo to decide side to turn
