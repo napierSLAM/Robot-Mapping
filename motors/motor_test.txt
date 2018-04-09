@@ -1,0 +1,21 @@
+Jottings on testing motor analogue speed
+(photos taken)
+
+Fresh 1.5v batterys
+
+Missing weight of pi and sonar array
+But all battry 
+
+Both motors at 100
+
+No motion
+
+Both Motors at 120
+
+Motion on low load surface (hardboard)
+
+Limited motion on carpet tiles
+
+Distinct pull to left both surfaces, larger on carpet
+
+
