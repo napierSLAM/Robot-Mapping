@@ -149,7 +149,7 @@ void left(int slots, int mSpeed)
 void setup()
 {
   // Attach the Interrupt to ISR, increasing count on high sensor
-  attachInterrupt(digitalPinToInterrupt (DISTPIN), ISR_count, RISING);
+  attachInterrupt(digitalPinToInterrupt (DIST_PIN), ISR_count, RISING);
 
   // testing below
   forward(255);  // Forward at 255 speed
