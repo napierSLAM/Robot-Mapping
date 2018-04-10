@@ -29,13 +29,13 @@ const byte RDIST_PIN = 2;
 const byte LDIST_PIN = 3;
 
 // Volatile int to hold right slot count
-volatile int RslotC = 0;
+volatile int RslotC;
 // Volatile int to hold right slot count
-volatile int LslotC = 0;
+volatile int LslotC;
 //Volatile int to hold total forward slot count
 volatile int TslotC = 0;
 // Volatile int to hold distance to travel for each loop
-volatile int steps = 0;
+int steps = 4;
 
 // Pins for Right Motor
 // pwm
@@ -201,6 +201,7 @@ void setup()
 
   Serial.begin(9600);
   delay(2000);
+  Serial.println(TslotC);
 
 }
 
