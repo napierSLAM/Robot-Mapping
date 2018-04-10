@@ -82,12 +82,12 @@ void forward(int mSpeed)
   LslotC = 0;
   while (steps > RslotC && steps > LslotC) {
     if (steps > RslotC) {
-    analogWrite(en1, mspeed);
+    analogWrite(en1, mSpeed);
     } else {
     analogWrite(en1, 0);
     }
     if (steps > LslotC) {
-    analogWrite(en2, mspeed);
+    analogWrite(en2, mSpeed);
     } else {
     analogWrite(e2, 0);
     }
@@ -112,12 +112,12 @@ void reverse(int mSpeed)
   LslotC = 0;
   while (reverseSteps > RslotC && reverseSteps > LslotC) {
     if (reverseSteps > RslotC) {
-    analogWrite(en1, mspeed);
+    analogWrite(en1, mSpeed);
     } else {
     analogWrite(en1, 0);
     }
     if (steps > LslotC) {
-    analogWrite(en2, mspeed);
+    analogWrite(en2, mSpeed);
     } else {
     analogWrite(e2, 0);
     }
@@ -142,12 +142,12 @@ void right(int slots, int mSpeed)
   LslotC = 0;
   while (steps > RslotC && steps > LslotC) {
     if (steps > RslotC) {
-    analogWrite(en1, mspeed);
+    analogWrite(en1, mSpeed);
     } else {
     analogWrite(en1, 0);
     }
     if (steps > LslotC) {
-    analogWrite(en2, mspeed);
+    analogWrite(en2, mSpeed);
     } else {
     analogWrite(e2, 0);
     }
@@ -170,12 +170,12 @@ void left(int slots, int mSpeed)
   LslotC = 0;
   while (steps > RslotC && steps > LslotC) {
     if (steps > RslotC) {
-    analogWrite(en1, mspeed);
+    analogWrite(en1, mSpeed);
     } else {
     analogWrite(en1, 0);
     }
     if (steps > LslotC) {
-    analogWrite(en2, mspeed);
+    analogWrite(en2, mSpeed);
     } else {
     analogWrite(e2, 0);
     }
