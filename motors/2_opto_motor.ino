@@ -83,11 +83,13 @@ void forward(int mSpeed)
   while (steps > RslotC && steps > LslotC) {
     if (steps > RslotC) {
       analogWrite(en1, mSpeed);
+      Serial.println(RslotC);
     } else {
       analogWrite(en1, 0);
     }
     if (steps > LslotC) {
       analogWrite(en2, mSpeed);
+      Serial.println(LslotC);
     } else {
       analogWrite(en2, 0);
     }
@@ -197,11 +199,18 @@ void setup()
   attachInterrupt(digitalPinToInterrupt (RDIST_PIN), ISR_countR, RISING);
   attachInterrupt(digitalPinToInterrupt (LDIST_PIN), ISR_countL, RISING);
 
-  // testing below
-  forward(255);  // Forward at 255 speed
+  Serial.begin(9600);
+  delay(2000);
+
+}
+
+
+void loop()
+{
+  forward(180);  // Forward at 255 speed
   delay(1000);  // Wait one second
   Serial.println(TslotC);
-  mStop();
+    //mStop();
   //  reverse(255);  // Reverse 10 steps at 255 speed
   //  delay(1000);  // Wait one second
   //  forward(150);
@@ -211,10 +220,4 @@ void setup()
   //  right(12, 175);  // Spin right 12 steps at 175 speed
   //  delay(1000);  // Wait one second
   //  left(12, 175);  // Spin left 12 steps at 175 speed
-}
-
-
-void loop()
-{
-
 }
