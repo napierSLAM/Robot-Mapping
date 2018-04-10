@@ -55,7 +55,7 @@ void ISR_countR()
   RslotC++;  // increment right slot count
 }
 
-void ISR_countL()  
+void ISR_countL()
 {
   LslotC++;  // increment left slot count
 }
@@ -76,29 +76,29 @@ void forward(int mSpeed)
   // left motor forward
   digitalWrite(in3, HIGH);
   digitalWrite(in4, LOW);
-  
-   // reset slot count
+
+  // reset slot count
   RslotC = 0;
   LslotC = 0;
   while (steps > RslotC && steps > LslotC) {
     if (steps > RslotC) {
-    analogWrite(en1, mSpeed);
+      analogWrite(en1, mSpeed);
     } else {
-    analogWrite(en1, 0);
+      analogWrite(en1, 0);
     }
     if (steps > LslotC) {
-    analogWrite(en2, mSpeed);
+      analogWrite(en2, mSpeed);
     } else {
-    analogWrite(e2, 0);
+      analogWrite(en2, 0);
     }
-   }
-  TslotC += RslotC // store total forward slots    
+  }
+  TslotC += RslotC; // store total forward slots
 }
 
 // Function for Reverse  Not currently used in bot program
 void reverse(int mSpeed)
 {
-  int reverseSteps = 5
+  int reverseSteps = 5;
   // right motor reverse
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
@@ -107,22 +107,22 @@ void reverse(int mSpeed)
   digitalWrite(in3, LOW);
   digitalWrite(in4, HIGH);
 
-   // reset slot count
+  // reset slot count
   RslotC = 0;
   LslotC = 0;
   while (reverseSteps > RslotC && reverseSteps > LslotC) {
     if (reverseSteps > RslotC) {
-    analogWrite(en1, mSpeed);
+      analogWrite(en1, mSpeed);
     } else {
-    analogWrite(en1, 0);
+      analogWrite(en1, 0);
     }
     if (steps > LslotC) {
-    analogWrite(en2, mSpeed);
+      analogWrite(en2, mSpeed);
     } else {
-    analogWrite(e2, 0);
+      analogWrite(en2, 0);
     }
-   }
-  TslotC -= RslotC // minus slot from forward    
+  }
+  TslotC -= RslotC; // minus slot from forward
 }
 
 // Function to Turn Right
@@ -142,16 +142,16 @@ void right(int slots, int mSpeed)
   LslotC = 0;
   while (steps > RslotC && steps > LslotC) {
     if (steps > RslotC) {
-    analogWrite(en1, mSpeed);
+      analogWrite(en1, mSpeed);
     } else {
-    analogWrite(en1, 0);
+      analogWrite(en1, 0);
     }
     if (steps > LslotC) {
-    analogWrite(en2, mSpeed);
+      analogWrite(en2, mSpeed);
     } else {
-    analogWrite(e2, 0);
+      analogWrite(en2, 0);
     }
-   }
+  }
 }
 
 // Function to Turn Left
@@ -170,19 +170,19 @@ void left(int slots, int mSpeed)
   LslotC = 0;
   while (steps > RslotC && steps > LslotC) {
     if (steps > RslotC) {
-    analogWrite(en1, mSpeed);
+      analogWrite(en1, mSpeed);
     } else {
-    analogWrite(en1, 0);
+      analogWrite(en1, 0);
     }
     if (steps > LslotC) {
-    analogWrite(en2, mSpeed);
+      analogWrite(en2, mSpeed);
     } else {
-    analogWrite(e2, 0);
+      analogWrite(en2, 0);
     }
-   }
+  }
 }
 
-void mStop () { 
+void mStop () {
   analogWrite(en1, 0);
   analogWrite(en2, 0);
 }
@@ -200,17 +200,17 @@ void setup()
   // testing below
   forward(255);  // Forward at 255 speed
   delay(1000);  // Wait one second
-  Serial.println(slotC);
+  Serial.println(TslotC);
   mStop();
-//  reverse(255);  // Reverse 10 steps at 255 speed
-//  delay(1000);  // Wait one second
-//  forward(150);  
-//  delay(1000);  // Wait one second
-//  reverse(200);  
-//  delay(1000);  // Wait one second
-//  right(12, 175);  // Spin right 12 steps at 175 speed
-//  delay(1000);  // Wait one second
-//  left(12, 175);  // Spin left 12 steps at 175 speed
+  //  reverse(255);  // Reverse 10 steps at 255 speed
+  //  delay(1000);  // Wait one second
+  //  forward(150);
+  //  delay(1000);  // Wait one second
+  //  reverse(200);
+  //  delay(1000);  // Wait one second
+  //  right(12, 175);  // Spin right 12 steps at 175 speed
+  //  delay(1000);  // Wait one second
+  //  left(12, 175);  // Spin left 12 steps at 175 speed
 }
 
 
