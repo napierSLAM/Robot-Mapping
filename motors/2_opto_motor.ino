@@ -1,7 +1,7 @@
 /*
   Napier SLAM
   10/04/18
-  Pat
+  Paddy
   2 optoencoders
 */
 
@@ -201,24 +201,15 @@ void setup()
 
   Serial.begin(9600);
   delay(2000);
-  Serial.println(TslotC);
+
 
 }
 
 
 void loop()
 {
-  forward(180);  // Forward at 255 speed
+  forward(180);  // Forward at 180 speed
   delay(1000);  // Wait one second
   Serial.println(TslotC);
-    //mStop();
-  //  reverse(255);  // Reverse 10 steps at 255 speed
-  //  delay(1000);  // Wait one second
-  //  forward(150);
-  //  delay(1000);  // Wait one second
-  //  reverse(200);
-  //  delay(1000);  // Wait one second
-  //  right(12, 175);  // Spin right 12 steps at 175 speed
-  //  delay(1000);  // Wait one second
-  //  left(12, 175);  // Spin left 12 steps at 175 speed
+
 }
