@@ -1,7 +1,9 @@
-# Robot-Mapping
+#WARNING BELOW IS NOW SUPERSEDED 
+#NEW READ ME TO DO
+## Robot-Mapping
 A simple autonomous mapping bot for Napier 17/18 Yr 3 Computer School Group Project
 
-# Initial Bot
+## Initial Bot
 The bot is moved by 2 DC motors controlled by an arduino
 
 An initial build was done to get a moving bot that was aware of its environment
