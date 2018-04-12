@@ -1,0 +1,28 @@
+3/4/18
+
+Putting all the development bits together into the clients bot
+
+
+Each sensor is producing sane data
+A good few hours were lost on the magnetometer, till I realised that the whiteboard was magnetised!
+
+Funnily enough, for the initial combination, the magnetometer isn't going to be used. (And considering the time left may never be used).
+It's all going to be on slot count.
+
+*Slot Count*
+	
+Initially I need to recap all the code sections
+
+	Check all motor functions:
+	
+		- forward at various speeds and for various slots
+		- reverse at various speeds and for various slots
+		- right for a specfic number of slots
+		- left for a specfic number of slots
+		- halting (? ir button lol)
+				Actually quickly looking at using ir remote shows it may be a quick bolt on
+		
+	Then check:
+	
+		- number of slots for distance traveled
+		- number of slots for degrees turned
