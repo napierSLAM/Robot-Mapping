@@ -12,6 +12,9 @@
   IF MORE THAN ONE COM PORT IS IN USE ON YOUR DEVICE CHANGE LINE 32
   new Serial(this, Serial.list()[*], 9600)
   To get com ports - printArray(Serial.list())
+  Icon from https://www.flaticon.com/
+  Icon made by http://www.freepik.com
+  Used under CC 3.0 licence
 */
 
 
