@@ -1,6 +1,4 @@
-3/4/18
-
-Putting all the development bits together into the clients bot
+***Putting all the development bits together into the clients bot***
 
 
 Each sensor is producing sane data
@@ -8,6 +6,10 @@ A good few hours were lost on the magnetometer, till I realised that the whitebo
 
 Funnily enough, for the initial combination, the magnetometer isn't going to be used. (And considering the time left may never be used).
 It's all going to be on slot count.
+Slots per turn
+Slots over x 
+Slots over y
+
 
 *Slot Count*
 	
@@ -23,6 +25,22 @@ Initially I need to recap all the code sections
 				Actually quickly looking at using ir remote shows it may be a quick bolt on
 		
 	Then check:
-	
+		- interrupt slot count
 		- number of slots for distance traveled
 		- number of slots for degrees turned
+
+Check Sonar Functions
+Three sonar array
+Side array
+
+Serial Comms
+Get and send data
+
+All checked correct 14th april 18
+
+Writing the code to combine all of this.
+
+firstCombine
+
+
+
