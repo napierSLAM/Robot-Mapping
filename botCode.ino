@@ -58,12 +58,6 @@ int y = 0;              // int for y coord
 String data;            // string to send down serial
 const String sep = "*"; // seperator for serial data
 
-
-void ISR_count() // set up interrupt
-{
-  slotC++;       // increment slot count
-}
-
 void fDistance()  // Function to get distance to obstacles using 3 sonar array
 {
   float sumDist = 0;
@@ -99,18 +93,16 @@ void forward(byte rSpeed, byte lSpeed)  // Function for Forward Travel
   digitalWrite(in2, LOW);
   digitalWrite(in3, HIGH);  // left motor forward
   digitalWrite(in4, LOW);
-
   analogWrite(en1, rSpeed); // set motors speed
   analogWrite(en2, lSpeed);
 }
 
-void reverse(byte rSpeed, byte lSpeed)  // Function for Reverse Travel
+void reverse(byte rSpeed, byte lSpeed)  // Function for Reverse Travel (not used in this implementation)
 {
   digitalWrite(in1, LOW);   // right motor reverse
   digitalWrite(in2, HIGH);
   digitalWrite(in3, LOW);   // left motor reverse
   digitalWrite(in4, HIGH);
-
   analogWrite(en1, rSpeed); // set motors speed
   analogWrite(en2, lSpeed);
 }
@@ -154,13 +146,13 @@ void halt()   // stop :)
 void turnSide()  // decide which side to turn to
 {
   sDistance();   // call side sonars
-  if (r > l)  {
+  if (r >= l)  {
     right(tSlots, tRM, tLM);
     hand = (hand + 5) % 4;
   }
   else  {
     left(tSlots, tRM, tLM);
-    hand = (hand + 5) % 4;
+    hand = (hand + 3) % 4;
   }
   slotC = 0;  // reset slots
 }
@@ -171,10 +163,10 @@ void coordUpdate() // updates coords and sends them down the serial line
     x = x + slotC;
   }
   else if (hand == 1)  {
-    x = x - slotC;
+    y = y + slotC;    
   }
-  else if (hand == 3)  {
-    y = y + slotC;
+  else if (hand == 2)  {
+    x = x - slotC;
   }
   else  {
     y = y - slotC;
@@ -183,11 +175,15 @@ void coordUpdate() // updates coords and sends them down the serial line
   Serial.println(data); // send down line
 }
 
+void ISR_count() // set up interrupt
+{
+  slotC++;       // increment slot count
+}
+
 
 void setup() {
-  // Attach the Interrupt to ISR, increasing count on high sensor
+  // Attach the Interrupt to ISR, increasing count on rising signal
   attachInterrupt(digitalPinToInterrupt (DIST_PIN), ISR_count, RISING);
-
   Serial.begin(9600);
 }
 
