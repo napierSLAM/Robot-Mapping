@@ -27,8 +27,7 @@ NewPing front_Sonar[FSONAR_NUM] = {    // Front sonar array object
   NewPing(PIN_3, PIN_3, MAX_DISTANCE)
 };
 
-// Side sonar objects
-NewPing right_Sonar(PIN_4, PIN_4, MAX_DISTANCE);
+NewPing right_Sonar(PIN_4, PIN_4, MAX_DISTANCE);   // Side sonar objects
 NewPing left_Sonar(PIN_5, PIN_5, MAX_DISTANCE);
 
 boolean contact = false;  // handshake flag
@@ -73,7 +72,6 @@ void fDistance()  // Function to get distance to obstacles using 3 sonar array
     }
   }
   dist = sumDist / FSONAR_NUM; // Get mean of distances
-  Serial.println(dist);
 }
 
 void sDistance()  // Get side distances
@@ -81,10 +79,6 @@ void sDistance()  // Get side distances
   r = right_Sonar.ping_cm();
   delay(50);
   l = left_Sonar.ping_cm();
-  Serial.print("right ");
-  Serial.println(r);
-  Serial.print("left ");
-  Serial.println(l);
 }
 
 void forward(byte rSpeed, byte lSpeed)  // Function for Forward Travel
