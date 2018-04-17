@@ -1,3 +1,10 @@
+/*
+ * Mapping Robot
+ * George Oda
+ * Servo, sonar and motors code 
+ * 
+ */
+
 #include <SR04.h>
 #include <Servo.h>
 
@@ -58,48 +65,48 @@ void loop() {
   
     
    if ((a<=20)&&(pos=90)&&(a!=fail)){
-    STOP();
-    pos=160;
-    myservo.write(pos);
-   long a1=sr04.Distance();
-   delay(100);
-   Serial.print(a1);
-   Serial.println("cm");    
-  long a2=sr04.Distance();
-  delay(100);
-   Serial.print(a2);
-   Serial.println("cm");
-  long a3=sr04.Distance();
-  delay(100);
-   Serial.print(a3);
-   Serial.println("cm");
-   long avra = (a1+a2+a3)/3;           
-   delay(2000);
-    pos=20;
-    myservo.write(pos);
-   long b1=sr04.Distance();
-   delay(100);
-   Serial.print(b1);
-   Serial.println("cm");   
-   long b2=sr04.Distance();
-   delay(100);
-   Serial.print(b2);
-   Serial.println("cm");   
-   long b3=sr04.Distance();
-   delay(100);
-   Serial.print(b3);
-   Serial.println("cm");
-   long avrb = (b1+b2+b3)/3;   
-    delay(2000);
-    if ((avra>=avrb)&&(avra>20)){
-      TURNLEFT();
       STOP();
+      pos=160;
+      myservo.write(pos);
+      long a1=sr04.Distance();
+      delay(100);
+      Serial.print(a1);
+      Serial.println("cm");    
+      long a2=sr04.Distance();
+      delay(100);
+      Serial.print(a2);
+      Serial.println("cm");
+      long a3=sr04.Distance();
+      delay(100);
+      Serial.print(a3);
+      Serial.println("cm");
+      long avra = (a1+a2+a3)/3;           
+      delay(2000);
+      pos=20;
+      myservo.write(pos);
+      long b1=sr04.Distance();
+      delay(100);
+      Serial.print(b1);
+      Serial.println("cm");   
+      long b2=sr04.Distance();
+      delay(100);
+      Serial.print(b2);
+      Serial.println("cm");   
+      long b3=sr04.Distance();
+      delay(100);
+      Serial.print(b3);
+      Serial.println("cm");
+      long avrb = (b1+b2+b3)/3;   
+      delay(2000);
+      if ((avra>=avrb)&&(avra>20)){
+        TURNLEFT();
+        STOP();
       }
-     else if ((avrb>avra)&&(avrb>20)) {
-      TURNRIGHT();
-      STOP();}    
-     else {TURNAROUND();
-     STOP();
+      else if ((avrb>avra)&&(avrb>20)) {
+        TURNRIGHT();
+        STOP();}    
+      else {TURNAROUND();
+      STOP();
      
      delay(500);}
 }else {FORWARD();}
@@ -108,8 +115,8 @@ void loop() {
 
 void FORWARD(){
     Serial.println("Forward");
-    analogWrite(MRSPEED,50); // enable on
-    analogWrite(MLSPEED,50); // enable on
+    analogWrite(MRSPEED,160); // enable on
+    analogWrite(MLSPEED,160); // enable on
     digitalWrite(MRDIRA,HIGH); //one way
     digitalWrite(MLDIRA,HIGH); //one way
     digitalWrite(MRDIRB,LOW);    
@@ -132,7 +139,7 @@ void TURNLEFT(){
     digitalWrite(MLDIRA,LOW); //one way
     digitalWrite(MRDIRB,LOW);    
     digitalWrite(MLDIRB,HIGH);
-    delay(600);
+    delay(400);
   }
 
 void TURNRIGHT(){
@@ -143,7 +150,7 @@ void TURNRIGHT(){
     digitalWrite(MLDIRA,HIGH); //one way
     digitalWrite(MRDIRB,HIGH);    
     digitalWrite(MLDIRB,LOW);
-    delay(600);
+    delay(400);
   }
   
 void TURNAROUND(){
@@ -154,6 +161,6 @@ void TURNAROUND(){
     digitalWrite(MLDIRA,HIGH); //one way
     digitalWrite(MRDIRB,HIGH);    
     digitalWrite(MLDIRB,LOW);
-    delay(1200);
+    delay(800);
   }
 
