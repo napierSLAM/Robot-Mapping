@@ -43,12 +43,12 @@ byte in4 = 7;  // motor two direction b pin
 const byte DIST_PIN = 2;    // Constant for Distance Interrupt Pin
 volatile int slotC = 0;     // Volatile int to hold slot counts
 
-const byte rM = 186;    // Constant for right motor speed
-const byte lM = 200;    // Constant for left motor speed
-const byte tRM = 139;   // Constant for turning right motor speed
-const byte tLM = 150;   // Constant for turning left motor speed
+const byte rM = 215;    // Constant for right motor speed
+const byte lM = 235;    // Constant for left motor speed
+const byte tRM = 187;   // Constant for turning right motor speed
+const byte tLM = 200;   // Constant for turning left motor speed
 
-const byte tSlots = 15; // Constant for number of slots to turn
+const byte tSlots = 13; // Constant for number of slots to turn
 byte hand = 0;          // Direction bot facing
 
 int x = 0;              // int for x coord
@@ -115,20 +115,23 @@ void right(byte slots, byte rSpeed, byte lSpeed) // Function to Turn Right
     analogWrite(en2, lSpeed);
   }
   halt();
+  slotC = 0;
 }
 
 void left(byte slots, byte rSpeed, byte lSpeed)  // Function to Turn Left
 {
-  digitalWrite(in1, LOW);   // right motor reverse
-  digitalWrite(in2, HIGH);
-  digitalWrite(in3, HIGH);  // left motor forward
-  digitalWrite(in4, LOW);
+  slotC = 0;
+  digitalWrite(in1, HIGH);   // right motor forward
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, LOW);  // left motor reverse
+  digitalWrite(in4, HIGH);
 
   while (slots > slotC) {   // go left number of slots
     analogWrite(en1, rSpeed);
     analogWrite(en2, lSpeed);
   }
   halt();
+  slotC = 0;
 }
 
 void halt()   // stop :)
@@ -144,7 +147,7 @@ void turnSide()  // decide which side to turn to
     right(tSlots, tRM, tLM);
     hand = (hand + 5) % 4;
   }
-  else  {
+  else if {l > r) {
     left(tSlots, tRM, tLM);
     hand = (hand + 3) % 4;
   }
@@ -179,6 +182,7 @@ void setup() {
   // Attach the Interrupt to ISR, increasing count on rising signal
   attachInterrupt(digitalPinToInterrupt (DIST_PIN), ISR_count, RISING);
   Serial.begin(9600);
+  establishContact();
 }
 
 void loop() {
