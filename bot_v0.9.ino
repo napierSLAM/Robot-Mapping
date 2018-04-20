@@ -18,8 +18,8 @@
 #define PIN_5 4           // Trigger/echo pin for sonar 5
 
 volatile int dist;   // var to hold front pings
-int r;      // var to hold right pings
-int l;      // var to hold right pings
+int r;               // var to hold right pings
+int l;               // var to hold right pings
 byte collision = 32; // closest distance in cm that the bot will be to an object
 
 NewPing front_Sonar[FSONAR_NUM] = {    // Front sonar array object
@@ -143,21 +143,21 @@ void halt()   // stop :)
   analogWrite(en2, 0);
 }
 
-void turnSide()  // decide which side to turn to
+void turnSide()               // decide which side to turn to
 {
-  sDistance();   // call side sonars
-  if (r >= l) { //Turn right if it's the side with furthest obstacle
+  sDistance();                // call side sonars
+  if (r >= l) {               // Turn right if it's the side with furthest obstacle
     right(tSlots, tRM, tLM);
-    hand = (hand + 5) % 4; // for right; +5 modulo 4 hand loops 0 - 3
-  }       // hand is one of the 4 cardinal directions, labeled 0 1 2 3
+    hand = (hand + 5) % 4;    // for right; +5 modulo 4 hand loops 0 - 3
+  }                           // hand is one of the 4 cardinal directions, labeled 0 1 2 3
   else if (l > r) {
     left(tSlots, tRM, tLM);
-    hand = (hand + 3) % 4; // for left; +3 modulo 4 means hand loops 3 - 0
+    hand = (hand + 3) % 4;    // for left; +3 modulo 4 means hand loops 3 - 0
   }
-  slotC = 0;  // reset slots
+  slotC = 0;                  // reset slots
 }
 
-void coordUpdate() // updates coords and sends them down the serial line
+void coordUpdate()    // updates coords and sends them down the serial line
 {
   if (hand == 0)  {   // depending on the value of hand the x or y is adjusted up or down
     x = x + slotC;
@@ -171,13 +171,13 @@ void coordUpdate() // updates coords and sends them down the serial line
   else  {
     y = y - slotC;
   }
-  data = x + sep + y; // create string with separator to help receiver parse the serial msg
-  Serial.println(data); // send down line
+  data = x + sep + y;     // create string with separator to help receiver parse the serial msg
+  Serial.println(data);   // send down line
 }
 
-void ISR_count() // set up interrupt
+void ISR_count()          // set up interrupt
 {
-  slotC++;       // increment slot count
+  slotC++;                // increment slot count
 }
 
 
@@ -186,7 +186,7 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt (DIST_PIN), ISR_count, RISING);
   Serial.begin(9600);
   delay(50);
-  void establishContact(); // call handshake
+  void establishContact();  // call handshake
 }
 
 void loop() {
@@ -195,9 +195,9 @@ void loop() {
     if (dist > collision || slotC < resolution)  { // move if no collision object or resolution not reached
       forward(rM, lM);
     }
-    else if (dist <= collision)  { // If obstacle detected - move to clearest side
+    else if (dist <= collision)  {                 // If obstacle detected - move to clearest side
       halt();
-      coordUpdate(); // update coords before turn
+      coordUpdate();                               // update coords before turn
       turnSide();
     }
     else if (slotC >= resolution) {
@@ -208,13 +208,12 @@ void loop() {
   }
 }
 
-void establishContact() {      // handshake with serial device
+void establishContact() {              // handshake with serial device
   while (Serial.available() <= 0) {    // While there's no activity on line
     Serial.println('A');               // send stream of tokens
     delay(300);
   }
-  contact = true; //  set contact flag
-  delay(500);     // Give some time to settle
+  contact = true;                      // set contact flag
+  delay(500);                          // Give some time to settle
 }
 // This t00 shall pass
-
